@@ -223,7 +223,7 @@ nav button:hover{
     margin-left: 20px;
 }
 .box{
-    width: 47vmin;
+    width: 30%;
     height: 200px;
     box-shadow:
     inset 0 4px 24px 0 rgba(31, 38, 135, 0.15),
@@ -873,3 +873,4 @@ nav #logo{
     margin-left: 2%;
 
 }
+
