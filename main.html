@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Secretária de Educação</title>
+</head>
+<body>
+    <nav>
+        <div id="logo"></div>
+        <button onclick="inicio()">Início</button>
+        <button onclick="funcionarios()">Fucionários</button>
+        <button onclick="relatorios()">Relatórios</button>
+        <button onclick="sair()">Sair</button>
+
+    </nav>
+    <div id="inicio" style="display: block;">
+        <h1>Início</h1>
+
+        <div id="meus-funcionarios" class="box">
+            <h2>Total nesta área</h2>
+            <h3>Visível para você</h3>
+            <h2 class="count-f">0</h2>
+            <p>Somente funcionários das lotações que você pode gerenciar.</p>
+        </div>
+
+         <div id="total" class="box">
+            <h2>Total geral</h2>
+            <h3>Sistema inteiro</h3>
+            <h2 class="count-f">0</h2>
+            <p>Todas as pessoas cadastradas no sistema.</p>
+        </div>
+
+         <div id="lotacoes-visiveis" class="box">
+            <h2>Lotações Visíveis</h2>
+            <h2 class="count-f">0</h2>
+            <p>Clique em "Ver funcionários" para abrir a lista filtrada</p>
+        </div>
+
+        <div id="content" class="box-2">
+            <h2 id="school-name">Nome do Colégio</h2>
+            <h2 class="count-f">Secretaria de Educação</h2>
+            <p>0 funcionário(s) ativos nessa lotação</p>
+            <button id="add" class="bt-action">Adicionar funcionário</button>
+            <button id="visible" class="bt-action">Ver funcionário</button>
+            <button id="delete" class="bt-action">Excluir lotação</button>
+        </div>
+
+        <div id="content1" class="box-2">
+            <h2 id="school-name">Nome do Colégio</h2>
+            <h2 class="count-f">Secretaria de Educação</h2>
+            <p>0 funcionário(s) ativos nessa lotação</p>
+            <button id="add" class="bt-action">Adicionar funcionário</button>
+            <button id="visible" class="bt-action">Ver funcionário</button>
+            <button id="delete" class="bt-action">Excluir lotação</button>
+        </div>
+
+        <div id="content2" class="box-2">
+            <h2 id="school-name">Nome do Colégio</h2>
+            <h2 class="count-f">Secretaria de Educação</h2>
+            <p>0 funcionário(s) ativos nessa lotação</p>
+            <button id="add" class="bt-action">Adicionar funcionário</button>
+            <button id="visible" class="bt-action">Ver funcionário</button>
+            <button id="delete" class="bt-action">Excluir lotação</button>
+        </div>
+
+        <div id="content3" class="box-2">
+            <h2 id="school-name">Nome do Colégio</h2>
+            <h2 class="count-f">Secretaria de Educação</h2>
+            <p>0 funcionário(s) ativos nessa lotação</p>
+            <button id="add" class="bt-action">Adicionar funcionário</button>
+            <button id="visible" class="bt-action">Ver funcionário</button>
+            <button id="delete" class="bt-action">Excluir lotação</button>
+        </div>
+    </div>
+
+    <div id="funcionarios" style="display:none;">
+
+        <h1>Funcionários</h1>
+        <div class="cards">
+            <div class="card-funcionarios" style="background: linear-gradient(to bottom, #6fa9eb, #3b83db);">
+                <h2>Funcionários Desligados</h2>
+                <p>Acompanhe todas as pessoas com vínculo encerrado (demissões, exonerações, término de contrato, etc.). Você poderá filtrar por lotação, cargo e pesquisar por nome, CPF ou matrícula.</p> 
+                <div id="listar-funcionario-desligado">
+                    <input type="text" id="search-fd" name="search_fd" placeholder="Pesquisar por nome, CPF ou matrícula">
+                <input type="text" id="filter-fd" name="filter_fd" placeholder="Filtrar por lotação ou cargo">
+                <input type="date" id="date-fd" name="date_fd" placeholder="Filtrar por data de desligamento">
+                <button class="bt-action" id="search">Pesquisar</button>
+                    <table>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Matrícula</th>
+                            <th>Data de Desligamento</th>
+                        </tr>
+                        <tr>
+                            <td>João Silva</td>
+                            <td>123.456.789-00</td>
+                            <td>001234</td>
+                            <td>01/05/2024</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                <button class="bt-action" id="visible-fd">Ver Funcionários Desligados</button>
+                
+                
+                <p>Histórico completo de desligamento da rede</p>
+            </div>
+
+            <div class="card-funcionarios" style="background: linear-gradient(to bottom, rgb(255, 179, 64), rgb(255, 183, 50));">
+                <h2>Recadastramento Anual</h2>
+                <p>Atualize as informações dos funcionários efetivos e concursados. Cada lotação deve realizar o recadastramento dentro do período programado</p>
+                <div id="recadastramento">
+                    <input type="date" id="recadastramento-date" name="recadastramento_date" required>
+                    <input type="text" id="recadastramento-note" name="recadastramento_note" placeholder="Nome:">
+                    <input type="text" id="recadastramento-responsible" name="recadastramento_responsible" placeholder="CPF:">
+                    <input type="text" id="recadastramento-id" name="recadastramento_id" placeholder="Matrícula:">
+                    <input type="text" id="recadastramento-info" name="recadastramento_info" placeholder="Informações Adicionais:">
+                    <button class="bt-action">Salvar</button>
+                </div>
+                <button class="bt-action" id="bt-recadastramento">Iniciar Recadastramento</button>
+                <p id="p1">Ações disponíveis somente para lotações sob sua gestão.</p>
+            </div>
+
+            <div class="card-funcionarios" style="background: linear-gradient(to bottom, #6feb6f, #5bdb3b);">
+                <h2>Histórico Detalhado</h2>
+                <p>Visualize o histórico completo de desligamentos e reativações do sistema</p>
+                <div id="historico-detalhado">
+                    <table>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Matrícula</th>
+                            <th>Data de Desligamento</th>
+                            <th>Data de Reativação</th>
+                        </tr>
+                        <tr>
+                            <td>Maria Oliveira</td>
+                            <td>987.654.321-00</td>
+                            <td>005678</td>
+                            <td>15/03/2024</td>
+                            <td>20/04/2024</td>
+                        </tr>
+                    </table>
+                </div>
+                <button class="bt-action" id="visualizar_historico">Visualizar histórico</button>
+            </div>
+        </div>
+
+    </div>
+    <div id="relatorios" style="display:none;">
+        <h1>Relatórios</h1>
+    <div id="relatorio-content">
+        <p>Em construção...</p>
+        <table>
+            <tr>
+                <th>Relatório</th>
+                <th>Data de Criação</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Relatório de Funcionários Ativos</td>
+                <td>10/06/2024</td>
+                <td>Concluído</td>
+            </tr>
+            <tr>
+                <td>Relatório de Desligamentos Mensais</td>
+                <td>05/06/2024</td>
+                <td>Em Andamento</td>
+            </tr>
+        </table>
+        <button class="bt-action">Gerar Novo Relatório</button>
+    </div>
+        
+    <script src="action.js"></script>
+</body>
+</html>
